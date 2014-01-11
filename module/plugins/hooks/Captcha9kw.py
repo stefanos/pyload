@@ -29,7 +29,7 @@ from module.plugins.Hook import Hook
 
 class Captcha9kw(Hook):
     __name__ = "Captcha9kw"
-    __version__ = "0.09"
+    __version__ = "0.10"
     __description__ = """send captchas to 9kw.eu"""
     __config__ = [("activated", "bool", "Activated", False),
                   ("force", "bool", "Force CT even if client is connected", True),
@@ -40,7 +40,7 @@ class Captcha9kw(Hook):
                   ("selfsolve", "bool",
                    "If enabled and you have a 9kw client active only you will get your captcha to solve it (Selfsolve)",
                    "False"),
-                  ("timeout", "int", "Timeout (max. 300)", "300"),
+                  ("timeout", "int", "Timeout (max. 999)", "300"),
                   ("passkey", "password", "API key", ""), ]
     __author_name__ = ("RaNaN")
     __author_mail__ = ("RaNaN@pyload.org")
