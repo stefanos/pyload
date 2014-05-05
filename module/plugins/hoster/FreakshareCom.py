@@ -53,6 +53,8 @@ class FreakshareCom(Hoster):
                 self.retry()
             elif check == "downloadserver":
                 self.retry(5, 15 * 60, "No Download server")
+            else:
+                self.correctCaptcha()
 
     def prepare(self):
         pyfile = self.pyfile
