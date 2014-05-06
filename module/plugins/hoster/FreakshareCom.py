@@ -9,7 +9,7 @@ class FreakshareCom(Hoster):
     __name__ = "FreakshareCom"
     __type__ = "hoster"
     __pattern__ = r'http://(?:www\.)?freakshare\.(net|com)/files/\S*?/'
-    __version__ = "0.38"
+    __version__ = "0.39"
     __description__ = """Freakshare.com hoster plugin"""
     __author_name__ = ("sitacuisses", "spoob", "mkaay", "Toilal")
     __author_mail__ = ("sitacuisses@yahoo.de", "spoob@pyload.org", "mkaay@mkaay.de", "toilal.dev@gmail.com")
@@ -53,6 +53,8 @@ class FreakshareCom(Hoster):
                 self.retry()
             elif check == "downloadserver":
                 self.retry(5, 15 * 60, "No Download server")
+            else:
+                self.correctCaptcha()
 
     def prepare(self):
         pyfile = self.pyfile
